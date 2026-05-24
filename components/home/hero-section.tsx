@@ -24,6 +24,15 @@ export function HeroSection() {
   useEffect(() => {
     // Trigger entrance animation after component mounts
     setIsLoaded(true);
+    
+    // Ensure video autoplay works
+    const video = videoRef.current;
+    if (video) {
+      video.play().catch(() => {
+        // Autoplay was prevented, video will show poster
+        setIsVideoPlaying(false);
+      });
+    }
   }, []);
 
   const togglePlay = async () => {
@@ -59,6 +68,10 @@ export function HeroSection() {
           muted
           loop
           playsInline
+          preload="auto"
+          onCanPlay={() => {
+            videoRef.current?.play().catch(() => setIsVideoPlaying(false));
+          }}
           className="absolute inset-0 w-full h-full object-cover"
           poster="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1920&q=80"
         >
