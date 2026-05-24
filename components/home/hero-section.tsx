@@ -26,14 +26,19 @@ export function HeroSection() {
     setIsLoaded(true);
   }, []);
 
-  const togglePlay = () => {
+  const togglePlay = async () => {
     if (videoRef.current) {
       if (isVideoPlaying) {
         videoRef.current.pause();
+        setIsVideoPlaying(false);
       } else {
-        videoRef.current.play();
+        try {
+          await videoRef.current.play();
+          setIsVideoPlaying(true);
+        } catch (error) {
+          // Play was interrupted, ignore the error
+        }
       }
-      setIsVideoPlaying(!isVideoPlaying);
     }
   };
 
