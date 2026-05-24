@@ -1,16 +1,27 @@
-export default function Home() {
+import { Navbar } from '@/components/navbar';
+import { Footer } from '@/components/footer';
+import { HeroSection } from '@/components/home/hero-section';
+import { FeaturedProperties } from '@/components/home/featured-properties';
+import { PropertyCategories } from '@/components/home/property-categories';
+import { AboutSection } from '@/components/home/about-section';
+import { StatisticsSection } from '@/components/home/statistics-section';
+import { AgentsSection } from '@/components/home/agents-section';
+import { TestimonialsSection } from '@/components/home/testimonials-section';
+import { CTASection } from '@/components/home/cta-section';
+
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center font-sans">
-      <main className="flex w-full max-w-3xl flex-col items-center gap-8 px-6 py-16 text-center sm:items-start sm:text-left">
-        <div className="flex flex-col gap-4">
-          <h1 className="text-4xl font-bold tracking-tight">
-            versate
-          </h1>
-          <p className="max-w-md text-lg text-muted-foreground">
-            To get started, send a prompt or modify this page directly.
-          </p>
-        </div>
-      </main>
-    </div>
+    <main className="min-h-screen">
+      <Navbar />
+      <HeroSection />
+      <FeaturedProperties />
+      <PropertyCategories />
+      <AboutSection />
+      <StatisticsSection />
+      <AgentsSection />
+      <TestimonialsSection />
+      <CTASection />
+      <Footer />
+    </main>
   );
 }
