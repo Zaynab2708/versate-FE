@@ -11,7 +11,6 @@ function AnimatedCounter({ value, inView }: { value: string; inView: boolean }) 
   useEffect(() => {
     if (!inView) return;
     
-    // Extract numeric part and suffix
     const numericMatch = value.match(/[\d.]+/);
     const suffix = value.replace(/[\d.]+/, '');
     
@@ -58,15 +57,16 @@ export function StatisticsSection() {
   return (
     <section
       ref={ref}
-      className="py-20 lg:py-28 bg-primary text-primary-foreground relative overflow-hidden"
+      className="py-24 lg:py-32 bg-card relative overflow-hidden"
     >
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
+      {/* Subtle background elements */}
+      <div className="absolute inset-0 opacity-[0.02]">
         <div className="absolute inset-0" style={{
           backgroundImage: 'radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)',
-          backgroundSize: '40px 40px',
+          backgroundSize: '48px 48px',
         }} />
       </div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-transparent via-accent/30 to-transparent" />
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <motion.div
@@ -74,15 +74,27 @@ export function StatisticsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-6">
-            {t('Numbers That Speak', 'Les Chiffres Parlent')}
+          <motion.div
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="w-16 h-px bg-accent mb-8 mx-auto"
+          />
+          <p className="text-accent font-medium tracking-[0.3em] uppercase text-sm mb-4">
+            {t('Our Achievement', 'Nos Réalisations')}
+          </p>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 text-foreground">
+            {t('Numbers That', 'Les Chiffres')}
+            <br />
+            <span className="text-foreground/60">{t('Speak', 'Parlent')}</span>
           </h2>
-          <p className="text-primary-foreground/70 max-w-2xl mx-auto text-lg">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed">
             {t(
-              'Our track record of success reflects our commitment to excellence in luxury real estate.',
-              'Notre historique de succès reflète notre engagement envers l\'excellence dans l\'immobilier de luxe.'
+              'Our track record reflects our commitment to connecting buyers with exceptional land opportunities.',
+              'Notre historique reflète notre engagement à connecter les acheteurs avec des opportunités de terrain exceptionnelles.'
             )}
           </p>
         </motion.div>
@@ -91,16 +103,19 @@ export function StatisticsSection() {
           {statistics.map((stat, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="text-center"
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="text-center group"
             >
-              <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-accent mb-3">
-                <AnimatedCounter value={stat.value} inView={isInView} />
+              <div className="relative inline-block mb-4">
+                <div className="text-5xl md:text-6xl lg:text-7xl font-bold text-accent">
+                  <AnimatedCounter value={stat.value} inView={isInView} />
+                </div>
+                <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-8 h-px bg-accent/30 group-hover:w-16 transition-all duration-300" />
               </div>
-              <p className="text-primary-foreground/70 text-sm md:text-base">
+              <p className="text-muted-foreground text-sm md:text-base tracking-wide">
                 {t(stat.label, stat.labelFr)}
               </p>
             </motion.div>
