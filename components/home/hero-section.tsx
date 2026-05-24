@@ -127,14 +127,14 @@ export function HeroSection() {
         />
 
         {/* Main Heading with Staggered Animation */}
-        <div className="overflow-hidden">
+        <div className="overflow-visible">
           <motion.p
             initial={{ y: 100, opacity: 0 }}
             animate={isLoaded ? { y: 0, opacity: 1 } : {}}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="text-accent font-medium tracking-[0.3em] uppercase text-sm mb-4"
+            className="text-accent font-medium tracking-[0.3em] uppercase text-sm mb-6"
           >
-            {t('Premium Land Sales', 'Vente de Terrains Premium')}
+            {t('Premium Industrial Land Sales', 'Vente de Terrains Industriels Premium')}
           </motion.p>
         </div>
 
@@ -273,11 +273,11 @@ export function HeroSection() {
                     <SelectValue placeholder={t('Select range', 'Choisir gamme')} />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="0-500000">$0 - $500,000</SelectItem>
-                    <SelectItem value="500000-1000000">$500,000 - $1M</SelectItem>
-                    <SelectItem value="1000000-2000000">$1M - $2M</SelectItem>
-                    <SelectItem value="2000000-5000000">$2M - $5M</SelectItem>
-                    <SelectItem value="5000000+">$5M+</SelectItem>
+                    <SelectItem value="0-25000000">Rs 0 - Rs 25M</SelectItem>
+                    <SelectItem value="25000000-50000000">Rs 25M - Rs 50M</SelectItem>
+                    <SelectItem value="50000000-100000000">Rs 50M - Rs 100M</SelectItem>
+                    <SelectItem value="100000000-200000000">Rs 100M - Rs 200M</SelectItem>
+                    <SelectItem value="200000000+">Rs 200M+</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
