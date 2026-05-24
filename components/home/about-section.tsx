@@ -55,7 +55,7 @@ export function AboutSection() {
           >
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200"
+                src="/images/mauritius-land-aerial.jpg"
                 alt="Luxury Property"
                 fill
                 className="object-cover"

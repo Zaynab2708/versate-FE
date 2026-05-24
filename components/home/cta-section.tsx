@@ -15,7 +15,7 @@ export function CTASection() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80)',
+          backgroundImage: 'url(/images/mauritius-land-aerial.jpg)',
         }}
       >
         <div className="absolute inset-0 bg-background/95" />

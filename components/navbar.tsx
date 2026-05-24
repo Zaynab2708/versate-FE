@@ -18,8 +18,6 @@ const navLinks = [
   { href: '/', label: 'Home', labelFr: 'Accueil' },
   { href: '/properties', label: 'Properties', labelFr: 'Propriétés' },
   { href: '/about', label: 'About', labelFr: 'À Propos' },
-  { href: '/agents', label: 'Agents', labelFr: 'Agents' },
-  { href: '/blog', label: 'Blog', labelFr: 'Blog' },
   { href: '/contact', label: 'Contact', labelFr: 'Contact' },
 ];
 

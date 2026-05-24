@@ -15,7 +15,7 @@ const featuredAgent = {
   titleFr: 'Consultante Terrain Senior',
   email: 'sophie@versate.com',
   phone: '+230 5XXX XXXX',
-  image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&q=80',
+  image: '/images/agent-portrait.jpg',
   bio: 'With over 15 years of experience in Mauritian industrial land sales, Sophie has helped countless clients find their perfect parcels. Her deep knowledge of the market, strong negotiation skills, and commitment to excellence makes her the go-to consultant for discerning buyers looking for premium industrial land opportunities in Mauritius.',
   bioFr: 'Avec plus de 15 ans d\'expérience dans la vente de terrains industriels à Maurice, Sophie a aidé de nombreux clients à trouver leurs parcelles parfaites. Sa connaissance approfondie du marché, ses compétences en négociation et son engagement envers l\'excellence font d\'elle la consultante de référence.',
   properties: 45,

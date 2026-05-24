@@ -73,7 +73,7 @@ export function HeroSection() {
             videoRef.current?.play().catch(() => setIsVideoPlaying(false));
           }}
           className="absolute inset-0 w-full h-full object-cover"
-          poster="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1920&q=80"
+          poster="/images/mauritius-hero.jpg"
         >
           <source
             src="https://videos.pexels.com/video-files/3773486/3773486-uhd_2732_1440_25fps.mp4"
