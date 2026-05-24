@@ -4,6 +4,7 @@ import { Analytics } from '@vercel/analytics/next';
 import { ThemeProvider } from '@/components/theme-provider';
 import { LanguageProvider } from '@/lib/language-context';
 import { FavoritesProvider } from '@/lib/favorites-context';
+import { WhatsAppButton } from '@/components/whatsapp-button';
 import './globals.css';
 
 const inter = Inter({ 
@@ -45,8 +46,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#1a1a2e' },
+    { media: '(prefers-color-scheme: light)', color: '#0f0f14' },
+    { media: '(prefers-color-scheme: dark)', color: '#0f0f14' },
   ],
   width: 'device-width',
   initialScale: 1,
@@ -63,13 +64,14 @@ export default function RootLayout({
       <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
-          enableSystem
+          defaultTheme="dark"
+          enableSystem={false}
           disableTransitionOnChange
         >
           <LanguageProvider>
             <FavoritesProvider>
               {children}
+              <WhatsAppButton />
             </FavoritesProvider>
           </LanguageProvider>
         </ThemeProvider>
