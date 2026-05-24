@@ -4,6 +4,7 @@ import { Analytics } from '@vercel/analytics/next';
 import { ThemeProvider } from '@/components/theme-provider';
 import { LanguageProvider } from '@/lib/language-context';
 import { FavoritesProvider } from '@/lib/favorites-context';
+import { WhatsAppButton } from '@/components/whatsapp-button';
 import './globals.css';
 
 const inter = Inter({ 
@@ -70,6 +71,7 @@ export default function RootLayout({
           <LanguageProvider>
             <FavoritesProvider>
               {children}
+              <WhatsAppButton />
             </FavoritesProvider>
           </LanguageProvider>
         </ThemeProvider>

@@ -138,34 +138,34 @@ export function HeroSection() {
           </motion.p>
         </div>
 
-        <div className="overflow-hidden">
+        <div className="overflow-visible">
           <motion.h1
-            initial={{ y: 100 }}
-            animate={isLoaded ? { y: 0 } : {}}
+            initial={{ y: 100, opacity: 0 }}
+            animate={isLoaded ? { y: 0, opacity: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-bold text-foreground leading-[0.95] mb-2"
+            className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-bold text-foreground leading-[1.1] mb-1"
           >
             {t('Own Your', 'Possédez Votre')}
           </motion.h1>
         </div>
 
-        <div className="overflow-hidden">
+        <div className="overflow-visible">
           <motion.h1
-            initial={{ y: 100 }}
-            animate={isLoaded ? { y: 0 } : {}}
+            initial={{ y: 100, opacity: 0 }}
+            animate={isLoaded ? { y: 0, opacity: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-bold text-foreground leading-[0.95] mb-2"
+            className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-bold text-foreground leading-[1.1] mb-1"
           >
             {t('Piece of', 'Coin de')}
           </motion.h1>
         </div>
 
-        <div className="overflow-hidden mb-8">
+        <div className="overflow-visible mb-8">
           <motion.h1
-            initial={{ y: 100 }}
-            animate={isLoaded ? { y: 0 } : {}}
+            initial={{ y: 100, opacity: 0 }}
+            animate={isLoaded ? { y: 0, opacity: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-bold leading-[0.95]"
+            className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-bold leading-[1.1] pb-2"
           >
             <span className="text-accent">{t('Mauritius', 'Maurice')}</span>
           </motion.h1>
