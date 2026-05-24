@@ -117,7 +117,7 @@ export function HeroSection() {
       </motion.div>
 
       {/* Content */}
-      <div className="relative z-10 h-full flex flex-col justify-center container mx-auto px-4 lg:px-8 pt-20">
+      <div className="relative z-10 h-full flex flex-col justify-center container mx-auto px-4 lg:px-8 pt-32 pb-16">
         {/* Animated Decorative Line */}
         <motion.div
           initial={{ scaleX: 0 }}
@@ -143,7 +143,7 @@ export function HeroSection() {
             initial={{ y: 100 }}
             animate={isLoaded ? { y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-bold text-foreground leading-[0.95] mb-2"
+            className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-bold text-foreground leading-[1] mb-2"
           >
             {t('Own Your', 'Possédez Votre')}
           </motion.h1>
@@ -154,7 +154,7 @@ export function HeroSection() {
             initial={{ y: 100 }}
             animate={isLoaded ? { y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-bold text-foreground leading-[0.95] mb-2"
+            className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-bold text-foreground leading-[1] mb-2"
           >
             {t('Piece of', 'Coin de')}
           </motion.h1>
