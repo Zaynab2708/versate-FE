@@ -13,27 +13,50 @@ export function FeaturedProperties() {
   const featuredProperties = properties.filter((p) => p.featured).slice(0, 3);
 
   return (
-    <section className="py-20 lg:py-28 bg-background">
-      <div className="container mx-auto px-4 lg:px-8">
+    <section className="py-24 lg:py-32 bg-background relative overflow-hidden">
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 opacity-[0.02]">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `radial-gradient(circle at 1px 1px, currentColor 1px, transparent 1px)`,
+          backgroundSize: '48px 48px'
+        }} />
+      </div>
+
+      <div className="container mx-auto px-4 lg:px-8 relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="mb-16"
         >
-          <p className="text-sm font-medium text-accent uppercase tracking-wider mb-4">
-            {t('Exclusive Collection', 'Collection Exclusive')}
-          </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-6">
-            {t('Featured Properties', 'Propriétés en Vedette')}
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            {t(
-              'Explore our handpicked selection of the most prestigious properties currently available in Mauritius.',
-              'Découvrez notre sélection des propriétés les plus prestigieuses disponibles à Maurice.'
-            )}
-          </p>
+          {/* Decorative line */}
+          <motion.div
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="w-16 h-px bg-accent mb-8 origin-left"
+          />
+
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+            <div>
+              <p className="text-accent font-medium tracking-[0.3em] uppercase text-sm mb-4">
+                {t('Exclusive Collection', 'Collection Exclusive')}
+              </p>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground leading-[1.1]">
+                {t('Featured', 'Propriétés')}
+                <br />
+                <span className="text-foreground/60">{t('Properties', 'en Vedette')}</span>
+              </h2>
+            </div>
+            <p className="text-muted-foreground max-w-md text-lg leading-relaxed">
+              {t(
+                'Explore our handpicked selection of the most prestigious properties currently available in Mauritius.',
+                'Découvrez notre sélection des propriétés les plus prestigieuses disponibles à Maurice.'
+              )}
+            </p>
+          </div>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -47,10 +70,14 @@ export function FeaturedProperties() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-center mt-12"
+          className="mt-16 flex justify-center"
         >
           <Link href="/properties">
-            <Button variant="outline" size="lg" className="gap-2 group">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="gap-3 group border-foreground/20 text-foreground hover:bg-foreground hover:text-background transition-all duration-300 px-8"
+            >
               {t('View All Properties', 'Voir Toutes les Propriétés')}
               <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Button>

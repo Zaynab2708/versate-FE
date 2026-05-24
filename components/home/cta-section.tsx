@@ -10,7 +10,7 @@ export function CTASection() {
   const { t } = useLanguage();
 
   return (
-    <section className="py-20 lg:py-28 relative overflow-hidden">
+    <section className="py-24 lg:py-32 relative overflow-hidden">
       {/* Background */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -18,7 +18,8 @@ export function CTASection() {
           backgroundImage: 'url(https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80)',
         }}
       >
-        <div className="absolute inset-0 bg-primary/90" />
+        <div className="absolute inset-0 bg-background/95" />
+        <div className="absolute inset-0 bg-gradient-to-r from-accent/10 via-transparent to-accent/10" />
       </div>
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
@@ -27,15 +28,27 @@ export function CTASection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center text-primary-foreground max-w-3xl mx-auto"
+          className="text-center max-w-3xl mx-auto"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-6 text-balance">
+          <motion.div
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="w-16 h-px bg-accent mb-8 mx-auto"
+          />
+          
+          <p className="text-accent font-medium tracking-[0.3em] uppercase text-sm mb-4">
+            {t('Get Started', 'Commencez')}
+          </p>
+          
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 text-foreground text-balance leading-[1.1]">
             {t(
               'Ready to Find Your Dream Property?',
               'Prêt à Trouver Votre Propriété de Rêve?'
             )}
           </h2>
-          <p className="text-primary-foreground/80 text-lg mb-10 max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg mb-12 max-w-2xl mx-auto leading-relaxed">
             {t(
               'Let our expert team guide you through the process of finding and acquiring the perfect luxury property in Mauritius.',
               'Laissez notre équipe d\'experts vous guider dans le processus de recherche et d\'acquisition de la propriété de luxe parfaite à Maurice.'
@@ -43,19 +56,27 @@ export function CTASection() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/properties">
-              <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 gap-2 group">
+              <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 gap-3 group px-8 h-12">
                 {t('Browse Properties', 'Parcourir les Propriétés')}
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
             <Link href="/contact">
-              <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-foreground/20 text-foreground hover:bg-foreground hover:text-background transition-all duration-300 px-8 h-12"
+              >
                 {t('Contact Us', 'Nous Contacter')}
               </Button>
             </Link>
           </div>
         </motion.div>
       </div>
+
+      {/* Decorative elements */}
+      <div className="absolute bottom-0 left-0 w-px h-32 bg-gradient-to-t from-accent/30 to-transparent" />
+      <div className="absolute bottom-0 right-0 w-px h-32 bg-gradient-to-t from-accent/30 to-transparent" />
     </section>
   );
 }
