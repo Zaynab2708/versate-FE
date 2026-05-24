@@ -4,7 +4,7 @@ import { Analytics } from '@vercel/analytics/next';
 import { ThemeProvider } from '@/components/theme-provider';
 import { LanguageProvider } from '@/lib/language-context';
 import { FavoritesProvider } from '@/lib/favorites-context';
-import { WhatsAppButton } from '@/components/whatsapp-button';
+import { ChatbotWidget } from '@/components/chatbot-widget';
 import './globals.css';
 
 const inter = Inter({ 
@@ -19,11 +19,11 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Versate | Luxury Real Estate in Mauritius',
+    default: 'Versate | Premium Land Sales in Mauritius',
     template: '%s | Versate',
   },
-  description: 'Discover exceptional luxury properties in Mauritius. Versate offers premium villas, penthouses, and estates with unparalleled service.',
-  keywords: ['luxury real estate', 'Mauritius property', 'villas', 'penthouses', 'estates', 'waterfront homes'],
+  description: 'Discover exceptional land parcels in Mauritius. Versate offers premium residential, agricultural, and commercial land with unparalleled service and verified titles.',
+  keywords: ['land sales', 'Mauritius land', 'property', 'residential land', 'agricultural land', 'commercial land', 'investment', 'Mauritius'],
   generator: 'v0.app',
   icons: {
     icon: [
@@ -46,8 +46,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#0f0f14' },
-    { media: '(prefers-color-scheme: dark)', color: '#0f0f14' },
+    { media: '(prefers-color-scheme: light)', color: '#000000' },
+    { media: '(prefers-color-scheme: dark)', color: '#000000' },
   ],
   width: 'device-width',
   initialScale: 1,
@@ -71,7 +71,7 @@ export default function RootLayout({
           <LanguageProvider>
             <FavoritesProvider>
               {children}
-              <WhatsAppButton />
+              <ChatbotWidget />
             </FavoritesProvider>
           </LanguageProvider>
         </ThemeProvider>

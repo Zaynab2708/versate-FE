@@ -9,7 +9,7 @@ import { useLanguage } from '@/lib/language-context';
 import { useFavorites } from '@/lib/favorites-context';
 import { properties } from '@/lib/mock-data';
 
-function PropertyCardParklane({ property, index }: { property: typeof properties[0]; index: number }) {
+function LuxuryPropertyCard({ property, index }: { property: typeof properties[0]; index: number }) {
   const { t } = useLanguage();
   const { toggleFavorite, isFavorite } = useFavorites();
   const favorite = isFavorite(property.id);
@@ -38,7 +38,7 @@ function PropertyCardParklane({ property, index }: { property: typeof properties
             fill
             className="object-cover transition-transform duration-700 group-hover:scale-105"
           />
-          {/* Watermark overlay like parklane */}
+          {/* Watermark overlay */}
           <div className="absolute inset-0 flex items-center justify-center opacity-30">
             <span className="text-4xl font-serif text-white/50 tracking-[0.3em]">VERSATE</span>
           </div>
@@ -90,87 +90,79 @@ function PropertyCardParklane({ property, index }: { property: typeof properties
   );
 }
 
-export function FeaturedProperties() {
+export function LuxuryCollectionSection() {
   const { t } = useLanguage();
-  const featuredProperties = properties.filter((p) => p.featured).slice(0, 3);
+  // Get premium/luxury properties (highest priced)
+  const luxuryProperties = [...properties]
+    .sort((a, b) => b.price - a.price)
+    .slice(0, 3);
 
   return (
-    <section className="py-20 lg:py-28 bg-background relative">
+    <section className="py-20 lg:py-28 bg-card relative overflow-hidden">
+      {/* Decorative gold lines */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
+      
       <div className="container mx-auto px-4 lg:px-8">
-        {/* Section Header - Parklane Style */}
+        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-8"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-foreground">
-            {t('Featured Land Plots For Sale', 'Terrains en Vedette à Vendre')}
+          <p className="text-accent font-medium tracking-[0.3em] uppercase text-sm mb-4">
+            {t('Premium Collection', 'Collection Premium')}
+          </p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-6">
+            {t('Versate Premium Collection', 'Collection Premium Versate')}
           </h2>
+        </motion.div>
+
+        {/* Description */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="max-w-4xl mx-auto text-center mb-16"
+        >
+          <p className="text-muted-foreground leading-relaxed">
+            {t(
+              'Step into a world of refined elegance and exceptional investment with Versate\'s Premium Collection. This exclusive selection of prestigious land plots represents the finest opportunities curated for discerning buyers seeking unparalleled quality in Mauritius. From prime beachfront parcels to strategic commercial zones with exceptional views, our Premium Collection showcases properties that are accessible to both Mauritians and international buyers in extraordinary locations, catering to those who demand the finest.',
+              'Entrez dans un monde d\'élégance raffinée et d\'investissement exceptionnel avec la Collection Premium de Versate. Cette sélection exclusive de parcelles de terrain prestigieuses représente les meilleures opportunités organisées pour les acheteurs exigeants à la recherche d\'une qualité inégalée à Maurice.'
+            )}
+          </p>
         </motion.div>
 
         {/* Properties Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {featuredProperties.map((property, index) => (
-            <PropertyCardParklane key={property.id} property={property} index={index} />
+          {luxuryProperties.map((property, index) => (
+            <LuxuryPropertyCard key={property.id} property={property} index={index} />
           ))}
         </div>
 
-        {/* View All Button */}
+        {/* Explore Button */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-12 text-center"
         >
-          <Link href="/properties?status=for-sale">
+          <Link href="/properties?collection=premium">
             <Button 
-              variant="outline" 
-              className="border-foreground/20 text-foreground hover:bg-foreground hover:text-background transition-all duration-300 gap-2"
+              className="bg-accent text-accent-foreground hover:bg-accent/90 gap-2 px-8"
             >
-              {t('View All Properties For Sale', 'Voir Tous les Terrains à Vendre')}
-              <ArrowRight className="h-4 w-4" />
-            </Button>
-          </Link>
-        </motion.div>
-
-        {/* Divider */}
-        <div className="my-16 border-t border-foreground/5" />
-
-        {/* For Rent Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-foreground">
-            {t('Featured Land Plots For Rent', 'Terrains en Vedette à Louer')}
-          </h2>
-        </motion.div>
-
-        {/* For Rent Button */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-center"
-        >
-          <Link href="/properties?status=for-rent">
-            <Button 
-              variant="outline" 
-              className="border-foreground/20 text-foreground hover:bg-foreground hover:text-background transition-all duration-300 gap-2"
-            >
-              {t('View All Properties For Rent', 'Voir Tous les Terrains à Louer')}
+              {t('Explore the Collection', 'Explorer la Collection')}
               <ArrowRight className="h-4 w-4" />
             </Button>
           </Link>
         </motion.div>
       </div>
+
+      {/* Bottom decorative line */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
     </section>
   );
 }
