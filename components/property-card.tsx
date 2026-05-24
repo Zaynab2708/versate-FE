@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Heart, Bed, Bath, Maximize, MapPin } from 'lucide-react';
+import { Heart, Maximize, MapPin } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -105,29 +105,11 @@ export function PropertyCard({ property, index = 0 }: PropertyCardProps) {
             <span className="text-sm">{t(property.location, property.locationFr)}</span>
           </div>
 
-          {/* Features */}
-          {property.type !== 'land' && (
-            <div className="flex items-center gap-6 pt-5 border-t border-foreground/5">
-              <div className="flex items-center gap-2">
-                <Bed className="h-4 w-4 text-muted-foreground" />
-                <span className="text-sm font-medium text-foreground">{property.bedrooms}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Bath className="h-4 w-4 text-muted-foreground" />
-                <span className="text-sm font-medium text-foreground">{property.bathrooms}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Maximize className="h-4 w-4 text-muted-foreground" />
-                <span className="text-sm font-medium text-foreground">{property.area} {property.areaUnit}</span>
-              </div>
-            </div>
-          )}
-          {property.type === 'land' && (
-            <div className="flex items-center gap-2 pt-5 border-t border-foreground/5">
-              <Maximize className="h-4 w-4 text-muted-foreground" />
-              <span className="text-sm font-medium text-foreground">{property.area.toLocaleString()} {property.areaUnit}</span>
-            </div>
-          )}
+          {/* Features - Land focused (area only) */}
+          <div className="flex items-center gap-2 pt-5 border-t border-foreground/5">
+            <Maximize className="h-4 w-4 text-muted-foreground" />
+            <span className="text-sm font-medium text-foreground">{property.area.toLocaleString()} {property.areaUnit}</span>
+          </div>
         </CardContent>
       </Card>
     </motion.div>

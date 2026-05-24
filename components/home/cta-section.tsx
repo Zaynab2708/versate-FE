@@ -44,20 +44,20 @@ export function CTASection() {
           
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 text-foreground text-balance leading-[1.1]">
             {t(
-              'Ready to Find Your Dream Property?',
-              'Prêt à Trouver Votre Propriété de Rêve?'
+              'Ready to Own Your Piece of Paradise?',
+              'Prêt à Posséder Votre Coin de Paradis?'
             )}
           </h2>
           <p className="text-muted-foreground text-lg mb-12 max-w-2xl mx-auto leading-relaxed">
             {t(
-              'Let our expert team guide you through the process of finding and acquiring the perfect luxury property in Mauritius.',
-              'Laissez notre équipe d\'experts vous guider dans le processus de recherche et d\'acquisition de la propriété de luxe parfaite à Maurice.'
+              'Let us guide you through the process of finding and acquiring the perfect land parcel in Mauritius for your dream project.',
+              'Laissez-nous vous guider dans le processus de recherche et d\'acquisition de la parcelle parfaite à Maurice pour votre projet de rêve.'
             )}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/properties">
               <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 gap-3 group px-8 h-12">
-                {t('Browse Properties', 'Parcourir les Propriétés')}
+                {t('Browse Land Plots', 'Parcourir les Terrains')}
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>

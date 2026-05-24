@@ -13,26 +13,26 @@ export function AboutSection() {
   const features = [
     {
       icon: Award,
-      title: t('Excellence', 'Excellence'),
+      title: t('Premium Locations', 'Emplacements Premium'),
       description: t(
-        'Uncompromising quality and attention to detail in every transaction.',
-        'Qualité sans compromis et attention aux détails dans chaque transaction.'
+        'Hand-selected land plots in the most desirable locations across Mauritius.',
+        'Parcelles de terrain soigneusement sélectionnées dans les emplacements les plus prisés de Maurice.'
       ),
     },
     {
       icon: Users,
       title: t('Personal Service', 'Service Personnalisé'),
       description: t(
-        'Dedicated agents providing tailored solutions for each client.',
-        'Agents dévoués offrant des solutions sur mesure pour chaque client.'
+        'Dedicated guidance through every step of your land acquisition journey.',
+        'Accompagnement dédié à chaque étape de votre acquisition de terrain.'
       ),
     },
     {
       icon: Building2,
-      title: t('Prime Properties', 'Propriétés de Premier Choix'),
+      title: t('Verified Titles', 'Titres Vérifiés'),
       description: t(
-        'Access to the most exclusive properties in Mauritius.',
-        'Accès aux propriétés les plus exclusives de Maurice.'
+        'All land plots come with clear titles and complete documentation.',
+        'Tous les terrains sont accompagnés de titres clairs et d\'une documentation complète.'
       ),
     },
   ];
@@ -72,9 +72,9 @@ export function AboutSection() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="absolute -bottom-8 -right-8 md:bottom-8 md:-right-12 bg-accent text-accent-foreground p-8 rounded-2xl shadow-2xl max-w-[200px]"
             >
-              <p className="text-5xl md:text-6xl font-bold mb-2">15+</p>
+              <p className="text-5xl md:text-6xl font-bold mb-2">50+</p>
               <p className="text-sm font-medium opacity-90">
-                {t('Years of Excellence', 'Années d\'Excellence')}
+                {t('Land Parcels Available', 'Parcelles Disponibles')}
               </p>
             </motion.div>
 
@@ -99,22 +99,22 @@ export function AboutSection() {
             />
 
             <p className="text-accent font-medium tracking-[0.3em] uppercase text-sm mb-4">
-              {t('About Us', 'À Propos')}
+              {t('About Versate', 'À Propos de Versate')}
             </p>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-6 leading-[1.15]">
               {t(
-                'Your Trusted Partner in',
-                'Votre Partenaire de Confiance en'
+                'Your Gateway to',
+                'Votre Accès aux'
               )}
               <br />
               <span className="text-foreground/60">
-                {t('Luxury Real Estate', 'Immobilier de Luxe')}
+                {t('Prime Mauritian Land', 'Terrains de Premier Choix')}
               </span>
             </h2>
             <p className="text-muted-foreground text-lg mb-10 leading-relaxed">
               {t(
-                'Since 2008, Versate has been the premier destination for discerning buyers seeking exceptional properties in Mauritius. Our team of experienced professionals combines deep market knowledge with personalized service to deliver extraordinary results.',
-                'Depuis 2008, Versate est la destination de choix pour les acheteurs exigeants recherchant des propriétés exceptionnelles à Maurice. Notre équipe de professionnels expérimentés combine une connaissance approfondie du marché avec un service personnalisé.'
+                'Versate specializes in showcasing exceptional land parcels across Mauritius. Whether you\'re seeking a beachfront plot for your dream villa, a hillside retreat with panoramic views, or agricultural land for development, we offer carefully curated selections with verified titles and complete transparency.',
+                'Versate se spécialise dans la présentation de parcelles de terrain exceptionnelles à travers Maurice. Que vous recherchiez un terrain en bord de mer, une retraite en colline avec vue panoramique, ou un terrain agricole, nous offrons des sélections soigneusement choisies avec titres vérifiés.'
               )}
             </p>
 

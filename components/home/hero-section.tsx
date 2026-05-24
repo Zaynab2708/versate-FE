@@ -134,7 +134,7 @@ export function HeroSection() {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="text-accent font-medium tracking-[0.3em] uppercase text-sm mb-4"
           >
-            {t('Luxury Real Estate', 'Immobilier de Luxe')}
+            {t('Premium Land Sales', 'Vente de Terrains Premium')}
           </motion.p>
         </div>
 
@@ -145,7 +145,7 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
             className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-bold text-foreground leading-[0.95] mb-2"
           >
-            {t('Discover', 'Découvrez')}
+            {t('Own Your', 'Possédez Votre')}
           </motion.h1>
         </div>
 
@@ -156,7 +156,7 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-bold text-foreground leading-[0.95] mb-2"
           >
-            {t('Paradise in', 'Le Paradis à')}
+            {t('Piece of', 'Coin de')}
           </motion.h1>
         </div>
 
@@ -179,8 +179,8 @@ export function HeroSection() {
             className="text-lg md:text-xl text-foreground/60 max-w-xl leading-relaxed mb-12"
           >
             {t(
-              'Experience the finest properties in paradise. From oceanfront villas to exclusive estates, find your dream home with Versate.',
-              'Découvrez les plus belles propriétés du paradis. Des villas en bord de mer aux domaines exclusifs, trouvez votre maison de rêve avec Versate.'
+              'Explore exclusive land plots across Mauritius. From beachfront parcels to hillside retreats, find the perfect location to build your dream.',
+              'Explorez des parcelles de terrain exclusives à travers Maurice. Des terrains en bord de mer aux retraites en colline, trouvez l\'emplacement parfait.'
             )}
           </motion.p>
         </div>
@@ -242,22 +242,22 @@ export function HeroSection() {
                 </Select>
               </div>
 
-              {/* Property Type */}
+              {/* Land Type */}
               <div className="space-y-2">
                 <label className="text-xs font-medium text-muted-foreground flex items-center gap-2 uppercase tracking-wider">
                   <Home className="h-3.5 w-3.5" />
-                  {t('Property Type', 'Type de Propriété')}
+                  {t('Land Type', 'Type de Terrain')}
                 </label>
                 <Select>
                   <SelectTrigger className="bg-background/50 border-foreground/10 text-foreground">
                     <SelectValue placeholder={t('Select type', 'Choisir type')} />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="villa">{t('Villa', 'Villa')}</SelectItem>
-                    <SelectItem value="apartment">{t('Apartment', 'Appartement')}</SelectItem>
-                    <SelectItem value="penthouse">{t('Penthouse', 'Penthouse')}</SelectItem>
-                    <SelectItem value="estate">{t('Estate', 'Domaine')}</SelectItem>
-                    <SelectItem value="land">{t('Land', 'Terrain')}</SelectItem>
+                    <SelectItem value="beachfront">{t('Beachfront', 'Bord de Mer')}</SelectItem>
+                    <SelectItem value="hillside">{t('Hillside', 'Colline')}</SelectItem>
+                    <SelectItem value="residential">{t('Residential', 'Résidentiel')}</SelectItem>
+                    <SelectItem value="agricultural">{t('Agricultural', 'Agricole')}</SelectItem>
+                    <SelectItem value="commercial">{t('Commercial', 'Commercial')}</SelectItem>
                   </SelectContent>
                 </Select>
               </div>

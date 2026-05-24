@@ -42,18 +42,18 @@ export function FeaturedProperties() {
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
             <div>
               <p className="text-accent font-medium tracking-[0.3em] uppercase text-sm mb-4">
-                {t('Exclusive Collection', 'Collection Exclusive')}
+                {t('Prime Selection', 'Sélection Premium')}
               </p>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground leading-[1.1]">
-                {t('Featured', 'Propriétés')}
+                {t('Featured', 'Terrains')}
                 <br />
-                <span className="text-foreground/60">{t('Properties', 'en Vedette')}</span>
+                <span className="text-foreground/60">{t('Land Plots', 'en Vedette')}</span>
               </h2>
             </div>
             <p className="text-muted-foreground max-w-md text-lg leading-relaxed">
               {t(
-                'Explore our handpicked selection of the most prestigious properties currently available in Mauritius.',
-                'Découvrez notre sélection des propriétés les plus prestigieuses disponibles à Maurice.'
+                'Explore our handpicked selection of the most exceptional land parcels currently available across Mauritius.',
+                'Découvrez notre sélection des parcelles de terrain les plus exceptionnelles disponibles à Maurice.'
               )}
             </p>
           </div>
@@ -78,7 +78,7 @@ export function FeaturedProperties() {
               size="lg" 
               className="gap-3 group border-foreground/20 text-foreground hover:bg-foreground hover:text-background transition-all duration-300 px-8"
             >
-              {t('View All Properties', 'Voir Toutes les Propriétés')}
+              {t('View All Land Plots', 'Voir Tous les Terrains')}
               <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Button>
           </Link>

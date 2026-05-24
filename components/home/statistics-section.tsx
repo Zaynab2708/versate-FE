@@ -93,8 +93,8 @@ export function StatisticsSection() {
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed">
             {t(
-              'Our track record of success reflects our commitment to excellence in luxury real estate.',
-              'Notre historique de succès reflète notre engagement envers l\'excellence dans l\'immobilier de luxe.'
+              'Our track record reflects our commitment to connecting buyers with exceptional land opportunities.',
+              'Notre historique reflète notre engagement à connecter les acheteurs avec des opportunités de terrain exceptionnelles.'
             )}
           </p>
         </motion.div>

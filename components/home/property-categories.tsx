@@ -37,15 +37,15 @@ export function PropertyCategories() {
                 {t('Browse By', 'Parcourir Par')}
               </p>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground leading-[1.1]">
-                {t('Property', 'Catégories de')}
+                {t('Land', 'Catégories de')}
                 <br />
-                <span className="text-foreground/60">{t('Categories', 'Propriétés')}</span>
+                <span className="text-foreground/60">{t('Categories', 'Terrains')}</span>
               </h2>
             </div>
             <p className="text-muted-foreground max-w-md text-lg leading-relaxed">
               {t(
-                'Find the perfect property type that matches your lifestyle and preferences.',
-                'Trouvez le type de propriété parfait qui correspond à votre style de vie.'
+                'Find the perfect land type that matches your vision and investment goals.',
+                'Trouvez le type de terrain parfait qui correspond à votre vision et vos objectifs.'
               )}
             </p>
           </div>
@@ -76,7 +76,7 @@ export function PropertyCategories() {
                     {t(category.name, category.nameFr)}
                   </h3>
                   <p className="text-muted-foreground text-sm">
-                    {category.count} {t('Properties', 'Propriétés')}
+                    {category.count} {t('Plots', 'Parcelles')}
                   </p>
                 </div>
                 <div className="absolute inset-0 border border-foreground/5 group-hover:border-accent/50 transition-colors duration-300 rounded-xl" />
