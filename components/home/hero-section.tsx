@@ -73,7 +73,7 @@ export function HeroSection() {
             videoRef.current?.play().catch(() => setIsVideoPlaying(false));
           }}
           className="absolute inset-0 w-full h-full object-cover"
-          poster="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1920&q=80"
+          poster="/images/mauritius-hero.jpg"
         >
           <source
             src="https://videos.pexels.com/video-files/3773486/3773486-uhd_2732_1440_25fps.mp4"
@@ -127,45 +127,45 @@ export function HeroSection() {
         />
 
         {/* Main Heading with Staggered Animation */}
-        <div className="overflow-hidden">
+        <div className="overflow-visible">
           <motion.p
             initial={{ y: 100, opacity: 0 }}
             animate={isLoaded ? { y: 0, opacity: 1 } : {}}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="text-accent font-medium tracking-[0.3em] uppercase text-sm mb-4"
+            className="text-accent font-medium tracking-[0.3em] uppercase text-sm mb-6"
           >
-            {t('Premium Land Sales', 'Vente de Terrains Premium')}
+            {t('Premium Industrial Land Sales', 'Vente de Terrains Industriels Premium')}
           </motion.p>
         </div>
 
-        <div className="overflow-hidden">
+        <div className="overflow-visible">
           <motion.h1
-            initial={{ y: 100 }}
-            animate={isLoaded ? { y: 0 } : {}}
+            initial={{ y: 100, opacity: 0 }}
+            animate={isLoaded ? { y: 0, opacity: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-bold text-foreground leading-[0.95] mb-2"
+            className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-bold text-foreground leading-[1.1] mb-1"
           >
             {t('Own Your', 'Possédez Votre')}
           </motion.h1>
         </div>
 
-        <div className="overflow-hidden">
+        <div className="overflow-visible">
           <motion.h1
-            initial={{ y: 100 }}
-            animate={isLoaded ? { y: 0 } : {}}
+            initial={{ y: 100, opacity: 0 }}
+            animate={isLoaded ? { y: 0, opacity: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-bold text-foreground leading-[0.95] mb-2"
+            className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-bold text-foreground leading-[1.1] mb-1"
           >
             {t('Piece of', 'Coin de')}
           </motion.h1>
         </div>
 
-        <div className="overflow-hidden mb-8">
+        <div className="overflow-visible mb-8">
           <motion.h1
-            initial={{ y: 100 }}
-            animate={isLoaded ? { y: 0 } : {}}
+            initial={{ y: 100, opacity: 0 }}
+            animate={isLoaded ? { y: 0, opacity: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-bold leading-[0.95]"
+            className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-bold leading-[1.1] pb-2"
           >
             <span className="text-accent">{t('Mauritius', 'Maurice')}</span>
           </motion.h1>
@@ -273,11 +273,11 @@ export function HeroSection() {
                     <SelectValue placeholder={t('Select range', 'Choisir gamme')} />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="0-500000">$0 - $500,000</SelectItem>
-                    <SelectItem value="500000-1000000">$500,000 - $1M</SelectItem>
-                    <SelectItem value="1000000-2000000">$1M - $2M</SelectItem>
-                    <SelectItem value="2000000-5000000">$2M - $5M</SelectItem>
-                    <SelectItem value="5000000+">$5M+</SelectItem>
+                    <SelectItem value="0-25000000">Rs 0 - Rs 25M</SelectItem>
+                    <SelectItem value="25000000-50000000">Rs 25M - Rs 50M</SelectItem>
+                    <SelectItem value="50000000-100000000">Rs 50M - Rs 100M</SelectItem>
+                    <SelectItem value="100000000-200000000">Rs 100M - Rs 200M</SelectItem>
+                    <SelectItem value="200000000+">Rs 200M+</SelectItem>
                   </SelectContent>
                 </Select>
               </div>

@@ -21,6 +21,9 @@ export function PropertyCard({ property, index = 0 }: PropertyCardProps) {
   const { isFavorite, toggleFavorite } = useFavorites();
 
   const formatPrice = (price: number) => {
+    if (property.currency === 'MUR') {
+      return `Rs ${new Intl.NumberFormat('en-MU').format(price)}`;
+    }
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: property.currency,

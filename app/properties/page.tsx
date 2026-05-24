@@ -53,7 +53,7 @@ export default function PropertiesPage() {
   const [sortBy, setSortBy] = useState('newest');
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
   const [selectedLocations, setSelectedLocations] = useState<string[]>([]);
-  const [priceRange, setPriceRange] = useState([0, 10000000]);
+  const [priceRange, setPriceRange] = useState([0, 500000000]);
   const [bedroomsMin, setBedroomsMin] = useState('');
 
   const filteredProperties = useMemo(() => {
@@ -126,7 +126,7 @@ export default function PropertiesPage() {
     setSearchQuery('');
     setSelectedTypes([]);
     setSelectedLocations([]);
-    setPriceRange([0, 10000000]);
+    setPriceRange([0, 500000000]);
     setBedroomsMin('');
   };
 
@@ -135,7 +135,7 @@ export default function PropertiesPage() {
     selectedTypes.length > 0 ||
     selectedLocations.length > 0 ||
     priceRange[0] > 0 ||
-    priceRange[1] < 10000000 ||
+    priceRange[1] < 500000000 ||
     bedroomsMin;
 
   const FilterContent = () => (
@@ -192,13 +192,13 @@ export default function PropertiesPage() {
             value={priceRange}
             onValueChange={setPriceRange}
             min={0}
-            max={10000000}
-            step={100000}
+            max={500000000}
+            step={5000000}
             className="mb-4"
           />
           <div className="flex justify-between text-sm text-muted-foreground">
-            <span>${(priceRange[0] / 1000000).toFixed(1)}M</span>
-            <span>${(priceRange[1] / 1000000).toFixed(1)}M</span>
+            <span>Rs {(priceRange[0] / 1000000).toFixed(0)}M</span>
+            <span>Rs {(priceRange[1] / 1000000).toFixed(0)}M</span>
           </div>
         </div>
       </div>

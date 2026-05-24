@@ -73,7 +73,7 @@ export default function AboutPage() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80)',
+            backgroundImage: 'url(/images/mauritius-land-aerial.jpg)',
           }}
         >
           <div className="absolute inset-0 bg-primary/90" />
@@ -89,12 +89,12 @@ export default function AboutPage() {
               {t('About Us', 'À Propos')}
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6">
-              {t('Redefining Luxury Real Estate', 'Redéfinir l\'Immobilier de Luxe')}
+              {t('Premium Industrial Land Sales', 'Vente de Terrains Industriels Premium')}
             </h1>
             <p className="text-lg text-primary-foreground/80">
               {t(
-                'For over 15 years, Versate has been the trusted name in luxury properties across Mauritius, delivering exceptional service and unparalleled results.',
-                'Depuis plus de 15 ans, Versate est le nom de confiance dans l\'immobilier de luxe à Maurice.'
+                'For over 15 years, Versate has been the trusted name in industrial land sales across Mauritius, delivering exceptional service and unparalleled results for businesses and investors.',
+                'Depuis plus de 15 ans, Versate est le nom de confiance dans la vente de terrains industriels à Maurice.'
               )}
             </p>
           </motion.div>
@@ -147,8 +147,8 @@ export default function AboutPage() {
             >
               <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200"
-                  alt="Luxury Property"
+                  src="/images/mauritius-hero.jpg"
+                  alt="Industrial Land Mauritius"
                   fill
                   className="object-cover"
                 />
